@@ -1,12 +1,16 @@
+/*---------------------
+----------ГАЛЕРЕЯ------
+----------------------*/
+
 function changeBigPicture (event) {
 	console.log('I am working');
-	var div = document.getElementById('bigPicture');
-	div.innerHTML = '';
+	var bigPicture = document.getElementById('bigPicture');
+	bigPicture.innerHTML = '';
 
 	var targetElement = event.target;
 	var newImage = new Image();
 	newImage.src = targetElement.src;
-	div.appendChild(newImage);
+	bigPicture.appendChild(newImage);
 }
 
 
@@ -15,11 +19,39 @@ window.onload = function(){
 	for (var i = 0; i < images.length; i++) {
 		images[i].addEventListener('click', changeBigPicture);
 	}
+}
+
+/*---------------------
+----------КОРЗИНА------
+----------------------*/
+
+function addToBasket(eventObj) {
+	console.log("new product");
+	var basket = document.getElementById('basket');
+
+	var targetBasket = eventObj.target;
+	basket.appendChild(targetBasket);
+}
+
+window.onload = function() {
+	var button = document.querySelectorAll('#newProducts > figure > button');
+	for (var cart = 0; cart < button.length; cart++) {
+		console.log('You add this product successfully!');
+		button[cart].addEventListener('click', addToBasket);
+	}
+}
+
+
+
+/*------------------------------
+----КНОПКИ ВПЕРЕД И НАЗАД------
+------------------------------*/
 
 
 
 //function buttonForwardAndBack {
 
+//bigPicture = current;
 var current = 1;
 var number = 6; //
 
@@ -55,11 +87,3 @@ function bck(){
 }
 
 
-
-
-
-
-
-/** Добавить в галерею функцию перехода к следующему изображению. По сторонам от большой
-картинки должны быть стрелки “вперед” и “назад”, по нажатию на которые происходит замена
-изображения на следующее или предыдущее.*/
