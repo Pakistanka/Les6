@@ -95,3 +95,14 @@ figcaption p {
 	height: 24px;
 }
 
+#prev,
+#next {
+	width: 50px;
+	height: 25px;
+	color: royalblue;
+	background: ivory;
+	float: left;
+	margin-top: 250px;
+	margin-left: 250px;
+}
+
